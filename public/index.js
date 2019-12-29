@@ -12,16 +12,18 @@ $("document").ready(function () {
         $("#content").load("reset.html");
     });
 
-    var interval = setInterval(function(){
+    var interval = setInterval(function () {
         getTotalUsersCount();
     }, 20 * 1000);
     getTotalUsersCount();
 });
 
+let backendEndpoint = "http://localhost:8080";
+
 function searchSubmit() {
     var searchText = $("#search-input").val();
     if (searchText) {
-        var url = 'http://localhost:8080/user/search/' + searchText
+        var url = backendEndpoint + '/user/search/' + searchText
         $.ajax({
             url: url,
             method: "GET",
@@ -60,7 +62,7 @@ function searchSubmit() {
 
 function redeemUser() {
     var searchText = $("#redeem-user").val();
-    var url = 'http://localhost:8080/user/redeem/' + searchText
+    var url = backendEndpoint + '/user/redeem/' + searchText
     $.ajax({
         url: url,
         method: "POST",
@@ -80,7 +82,7 @@ function redeemUser() {
 
 function checkStats() {
     var searchText = $("#stats-user").val();
-    var url = 'http://localhost:8080/user/stats/' + searchText
+    var url = backendEndpoint + '/user/stats/' + searchText
     $.ajax({
         url: url,
         method: "GET",
@@ -98,7 +100,7 @@ function checkStats() {
 }
 
 function getTotalUsersCount() {
-    var url = 'http://localhost:8080/users/count/';
+    var url = backendEndpoint + '/users/count/';
     $.ajax({
         url: url,
         method: "GET",
@@ -118,7 +120,7 @@ function getTotalUsersCount() {
 function resetPassword() {
     $(".status-head").css("visibility", "hidden");
     var name = $("#reset-user").val();
-    var url = 'http://localhost:8080/user/reset_password?name=' + name;
+    var url = backendEndpoint + '/user/reset_password?name=' + name;
     $.ajax({
         url: url,
         method: "PUT",
