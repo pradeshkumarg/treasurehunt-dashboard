@@ -12,10 +12,14 @@ $("document").ready(function () {
         $("#content").load("reset.html");
     });
 
-    var interval = setInterval(function () {
+    var interval1 = setInterval(function () {
         getTotalUsersCount();
     }, 20 * 1000);
     getTotalUsersCount();
+    var interval2 = setInterval(function () {
+        getRedemptionsCount();
+    }, 20 * 1000);
+    getRedemptionsCount();
 });
 
 let backendEndpoint = "http://54.186.42.52";
@@ -100,7 +104,7 @@ function checkStats() {
 }
 
 function getTotalUsersCount() {
-    var url = backendEndpoint + '/users/count/';
+    var url = backendEndpoint + '/users/count';
     $.ajax({
         url: url,
         method: "GET",
@@ -113,6 +117,24 @@ function getTotalUsersCount() {
         error: function (data) {
             var res = data.responseJSON.message;
             $("#users-count").html(res).css("color", "red");
+        }
+    });
+}
+
+function getRedemptionsCount() {
+    var url = backendEndpoint + '/redemptions';
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function (res) {
+            $("#redemptions-count").html(res).css("color", "green");
+        },
+        failure: function (res) {
+            $("#redemptions-count").html(res).css("color", "red");
+        },
+        error: function (data) {
+            var res = data.responseJSON.message;
+            $("#redemptions-count").html(res).css("color", "red");
         }
     });
 }
