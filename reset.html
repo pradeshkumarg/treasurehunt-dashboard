@@ -1,0 +1,28 @@
+<div class="reset">
+    <div class="page-header">
+        <h1>Reset Password</h1>
+    </div>
+    <div class="form-group mb-2">
+        <label for="reset-user">Name&nbsp;</label>
+        <input type="text" id="reset-user" placeholder="Enter user name">
+    </div>
+    <button class="btn btn-primary mb-2" id="reset-user-btn">Reset</button>
+    
+    <div class="status">
+        <h6>
+            <span class="status-head" style="visibility: hidden;">Updated Password : </span>
+            <span class="response-text" id="resp-text"></span>
+        </h6>
+    </div>
+</div>
+
+<script>
+    $('#reset-user').on("keypress", function (e) {
+        if (e.keyCode == 13) {
+            resetPassword();
+        }
+    });
+    $("#reset-user-btn").click(() => {
+        resetPassword();
+    });
+</script>

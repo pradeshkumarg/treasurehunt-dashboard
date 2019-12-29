@@ -1,0 +1,59 @@
+/* .container-fluid {
+    background-color: rgba(12, 11, 22, 0.844);
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgba(12, 11, 22, 0.844);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: rgba(12, 11, 22, 0.844);
+} */
+
+.nav li a {
+    color: #FFF;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 30px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: #e7792b;
+    color: #fff;
+    text-decoration: none;
+    padding: 30px 40px;
+}
+
+.nav li a:active {
+    background-color: #e26129;
+    color: #fff;
+    text-decoration: none;
+}
+
+#soc_logo {
+    display: block;
+    width: 40%;
+}
+
+.title-text {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+}
+
+.img-container {
+    position: relative;
+}
+
+.fixed-top{
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 10px;
+}

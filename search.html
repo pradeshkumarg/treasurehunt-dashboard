@@ -1,0 +1,43 @@
+<div class="search">
+    <div class="page-header">
+        <h1>Search Users (Enter name/phone/email/institution/stats)</h1>
+    </div>
+    <div>
+        <div class="form-group">
+            <input type="text" name="search-input-box" id="search-input" />
+            <button class="btn-primary" id="search-submit">Submit</button>
+            <div id="search-results">
+                <div id="search-error">
+
+                </div>
+                <table id="search-results-table" class="table table-striped">
+                    <thead id="search-results-table-head">
+
+                    </thead>
+                    <tbody id="search-results-table-body">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(() => {
+        var timeoutId = 0;
+        $('#search-input').on("keypress", function (e) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(searchSubmit, 500);
+        });
+        $('#search-input').keypress(function () {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(searchSubmit, 500);
+        });
+        $("#search-submit").click(() => {
+            searchSubmit();
+        });
+    });
+</script>
+

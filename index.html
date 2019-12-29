@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+
+    <!-- css files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="nav navbar navbar-inverse fixed-top">
+        <div class="container">
+            <div class="pull-left">
+                <a href="/" class="img-container">
+                    <img src="https://www.socure.com/hubfs/Assets_2019/home_page/soc_logo.svg" class="image-responsive"
+                        id="soc_logo" />
+                </a>
+            </div>
+            <ul class="list-inline pull-right">
+                <li class="list-unstyled"><a href="#" class="searchUsers">Search Users</a></li>
+                <li class="list-unstyled"><a href="#" class="redeemUser">Redeem User</a></li>
+                <li class="list-unstyled"><a href="#" class="dashboard">Dashboard</a></li>
+                <li class="list-unstyled"><a href="#" class="reset-password">Reset Password</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <main role="main" class="container">
+
+        <div id="content">
+            <div class="container">
+                <div class="row text-center">
+                    <h1>Welcome Socurean</h1>
+                    <h3><a href="#" onclick="getTotalUsersCount()" style="text-decoration: none;">Registered Users:</a> &nbsp;&nbsp;&nbsp; 
+                        <span id="users-count">************</span></h3>
+                    <img src="img/iitm.png" alt="iitm" width="75%" class="iitm-img"> 
+                </div>
+            </div>
+        </div>
+
+        <script id="table-template" type="text/x-handlebars-template">
+        {{#each users}}
+            <tr> 
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.institution}}</td>
+                <td>{{this.level}}</td>
+                <td>{{this.stats}}</td>
+                <td>{{this.token}}</td>
+            </tr>
+        {{/each}}
+        </script>
+    </main>
+
+</body>
+
+</html>

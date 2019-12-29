@@ -1,0 +1,28 @@
+<div class="dashboard">
+    <div class="page-header">
+        <h1>Enter name to check Stats</h1>
+    </div>
+    <div class="form-group mb-2">
+        <label for="redeem-user">Name&nbsp;</label>
+        <input type="text" id="stats-user" placeholder="Enter user name">
+    </div>
+    <button class="btn btn-primary mb-2" id="check-stats-btn">Check Stats</button>
+
+    <div class="status">
+        <h6>
+            <span>Stats : </span>
+            <span class="response-text" id="resp-text">*****************************</span>
+        </h6>
+    </div>
+</div>
+
+<script>
+    $('#stats-user').on("keypress", function (e) {
+        if (e.keyCode == 13) {
+            checkStats();
+        }
+    });
+    $("#check-stats-btn").click(() => {
+        checkStats();
+    });
+</script>

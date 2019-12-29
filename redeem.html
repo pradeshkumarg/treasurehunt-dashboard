@@ -1,0 +1,28 @@
+<div class="redemption">
+    <div class="page-header">
+        <h1>Enter User Name For Redemption</h1>
+    </div>
+    <div class="form-group mb-2">
+        <label for="redeem-user">Name&nbsp;</label>
+        <input type="text" id="redeem-user" placeholder="Enter user name">
+    </div>
+    <button class="btn btn-primary mb-2" id="redeem-user-btn">Redeem</button>
+    
+    <div class="status">
+        <h6>
+            <span>Status : </span>
+            <span class="response-text" id="resp-text">*****************************</span>
+        </h6>
+    </div>
+</div>
+
+<script>
+    $('#redeem-user').on("keypress", function (e) {
+        if (e.keyCode == 13) {
+            redeemUser();
+        }
+    });
+    $("#redeem-user-btn").click(() => {
+        redeemUser();
+    });
+</script>
