@@ -18,7 +18,7 @@ $("document").ready(function () {
     getTotalUsersCount();
 });
 
-let backendEndpoint = "http://54.186.42.52";
+let backendEndpoint = "http://localhost:8080";
 
 function searchSubmit() {
     var searchText = $("#search-input").val();
