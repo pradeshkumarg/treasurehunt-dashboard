@@ -40,6 +40,7 @@ function searchSubmit() {
                     $("#search-results-table-head").html(`<tr>
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Login Name</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Institution</th>
