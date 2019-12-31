@@ -22,7 +22,7 @@ $("document").ready(function () {
     getRedemptionsCount();
 });
 
-let backendEndpoint = "http://54.186.42.52";
+let backendEndpoint = "https://api-treasurehunt-2020.socure.net";
 
 function searchSubmit() {
     var searchText = $("#search-input").val();
