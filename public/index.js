@@ -30,8 +30,8 @@ $("document").ready(function () {
     getBannedCount();
 });
 
-// let backendEndpoint = "https://api-treasurehunt-2020.socure.net";
-let backendEndpoint = "http://localhost:8080";
+let backendEndpoint = "https://api-treasurehunt-2020.socure.net";
+// let backendEndpoint = "http://localhost:8080";
 
 function searchSubmit() {
     var searchText = $("#search-input").val();
