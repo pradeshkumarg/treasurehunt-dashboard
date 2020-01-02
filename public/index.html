@@ -35,6 +35,7 @@
                 <li class="list-unstyled"><a href="#" class="redeemUser">Redeem User</a></li>
                 <li class="list-unstyled"><a href="#" class="dashboard">Check Stats</a></li>
                 <li class="list-unstyled"><a href="#" class="reset-password">Reset Password</a></li>
+                <li class="list-unstyled"><a href="#" class="metrics">Metrics</a></li>
             </ul>
         </div>
     </nav>
@@ -51,12 +52,19 @@
                         <span id="users-count">************</span></h3>
                     <h3><a href="#" onclick="getRedemptionsCount()" style="text-decoration: none;">Winners:</a> &nbsp;&nbsp;&nbsp; 
                         <span id="redemptions-count">************</span></h3>
+                    <h3><a href="#" onclick="getIncidents()" style="text-decoration: none;">Incidents:</a> &nbsp;&nbsp;&nbsp; 
+                        Low :  &nbsp;<span id="inc-low">0</span> ,
+                        High : &nbsp;<span id="inc-high">0</span>
+                    </h3>
+                    <h3><a href="#" onclick="getBannedCount()" style="text-decoration: none;">Banned:</a> &nbsp;&nbsp;&nbsp; 
+                        <span id="banned-count">0</span></h3>
+
                     <img src="img/iitm.png" alt="iitm" width="75%" class="iitm-img"> 
                 </div>
             </div>
         </div>
 
-        <script id="table-template" type="text/x-handlebars-template">
+        <script id="search-table-template" type="text/x-handlebars-template">
         {{#each users}}
             <tr> 
                 <td>{{this.id}}</td>
@@ -68,6 +76,12 @@
                 <td>{{this.level}}</td>
                 <td>{{this.stats}}</td>
                 <td>{{this.token}}</td>
+                <td>
+                    <label class="switch">
+                        <input type="checkbox" id="{{this.loginName}}" {{checkedIf this.isBanned}} onclick="toggleUserStatus('{{this.loginName}}')">
+                        <span class="slider round"></span>
+                    </label>
+                </td>
             </tr>
         {{/each}}
         </script>
